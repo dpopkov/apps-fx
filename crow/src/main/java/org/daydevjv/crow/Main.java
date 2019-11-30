@@ -27,6 +27,24 @@ public class Main extends Application {
     private AudioClip audioClip;
     private CountDownTextField txInput;
 
+    // todo: fix this problem with MEDIA_UNAVAILABLE
+    /*
+
+    C:\data\tmp>java -jar crow.jar
+Exception in Application start method
+Exception in thread "main" java.lang.reflect.InvocationTargetException
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at sun.launcher.LauncherHelper$FXHelper.main(LauncherHelper.java:767)
+Caused by: java.lang.RuntimeException: Exception in Application start method
+        at com.sun.javafx.application.LauncherImpl.launchApplication1(LauncherImpl.java:917)
+        at com.sun.javafx.application.LauncherImpl.lambda$launchApplication$154(LauncherImpl.java:182)
+        at java.lang.Thread.run(Thread.java:748)
+Caused by: MediaException: MEDIA_UNAVAILABLE : C:\data\tmp\src\main\resources\audio\alarm.mp3 (Системе не удается найти указанный путь)
+     */
+
     @Override
     public void start(Stage primaryStage) {
         String url = Paths.get("src/main/resources/audio/" + AUDIO_FILE).toUri().toString();
